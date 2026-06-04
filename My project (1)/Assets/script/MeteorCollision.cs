@@ -7,6 +7,7 @@ public class MeteorCollision : MonoBehaviour
         if (other.CompareTag("Missile"))
         {
             GameManager.Instance.AddScore(scoreValue);
+            GetComponent<Meteor>().HitByMissile();
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
